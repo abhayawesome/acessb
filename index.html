@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ace SSB - Your Path to a Commissioned Rank</title>
 
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,7 +14,6 @@
       rel="stylesheet"
     />
 
-    <!-- Custom CSS -->
     <style>
       body {
         font-family: "Inter", sans-serif;
@@ -51,10 +48,53 @@
       #mobile-menu {
         transition: transform 0.3s ease-in-out;
       }
+
+      /* --- Custom Circular Loader Animation --- */
+      .loader-container {
+        position: relative;
+        width: 64px;
+        height: 64px;
+        margin-bottom: 1rem;
+      }
+
+      .circular-loader {
+        animation: rotate 2s linear infinite;
+        height: 100%;
+        transform-origin: center center;
+        width: 100%;
+      }
+
+      .loader-path {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+        animation: dash 1.5s ease-in-out infinite;
+        stroke-linecap: round;
+        stroke: #64ffda; /* Your accent color */
+      }
+
+      @keyframes rotate {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes dash {
+        0% {
+          stroke-dasharray: 1, 200;
+          stroke-dashoffset: 0;
+        }
+        50% {
+          stroke-dasharray: 89, 200;
+          stroke-dashoffset: -35px;
+        }
+        100% {
+          stroke-dasharray: 89, 200;
+          stroke-dashoffset: -124px;
+        }
+      }
     </style>
   </head>
   <body class="antialiased">
-    <!-- Header & Navigation -->
     <header
       id="navbar"
       class="glass-effect fixed top-0 left-0 right-0 z-50 transition-all duration-300"
@@ -124,9 +164,7 @@
       </div>
     </header>
 
-    <!-- Main Content -->
     <main class="container mx-auto px-6 pt-24">
-      <!-- Hero Section -->
       <section id="home" class="py-16 text-center">
         <h1
           class="text-4xl md:text-6xl font-extrabold text-white leading-tight"
@@ -139,7 +177,6 @@
         </p>
       </section>
 
-      <!-- Test Modules Section -->
       <section id="modules" class="py-16">
         <h2
           class="section-header text-3xl font-bold text-white mb-12 text-center"
@@ -147,7 +184,6 @@
           Online Practice Modules
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- PPDT/TAT Card -->
           <div
             class="glass-effect rounded-lg p-8 flex flex-col items-center text-center transform hover:-translate-y-2 transition-transform duration-300"
           >
@@ -161,7 +197,6 @@
               >Start PPDT Practice</a
             >
           </div>
-          <!-- WAT Card -->
           <div
             class="glass-effect rounded-lg p-8 flex flex-col items-center text-center transform hover:-translate-y-2 transition-transform duration-300"
           >
@@ -177,7 +212,6 @@
               >Start WAT Practice</a
             >
           </div>
-          <!-- SRT Card -->
           <div
             class="glass-effect rounded-lg p-8 flex flex-col items-center text-center transform hover:-translate-y-2 transition-transform duration-300"
           >
@@ -196,7 +230,6 @@
         </div>
       </section>
 
-      <!-- PPDT Image Gallery Section -->
       <section id="ppdt-gallery" class="py-16">
         <h2
           class="section-header text-3xl font-bold text-white mb-4 text-center"
@@ -213,8 +246,7 @@
           id="image-grid"
           class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
         >
-          <!-- Images will be injected here by JavaScript -->
-        </div>
+          </div>
         <div class="text-center mt-10">
           <button
             id="load-more-btn"
@@ -223,7 +255,6 @@
             View More Images
           </button>
         </div>
-        <!-- PPDT Purchase Card -->
         <div class="mt-16 max-w-lg mx-auto">
           <div
             class="glass-effect rounded-lg p-8 flex flex-col text-center border-t-4 border-accent"
@@ -237,8 +268,7 @@
               Ace SSB.
             </p>
             <a
-              href="https://pages.razorpay.com/Ananta"
-              target="_blank"
+              href="#"
               class="purchase-link mt-auto bg-accent text-slate-900 font-bold py-2 px-6 rounded-md hover:bg-opacity-80 transition-all"
               >Purchase Now</a
             >
@@ -246,7 +276,6 @@
         </div>
       </section>
 
-      <!-- Other Materials Purchase Section -->
       <section id="other-materials" class="py-16">
         <h2
           class="section-header text-3xl font-bold text-white mb-12 text-center"
@@ -258,7 +287,6 @@
           convenient PDF files for comprehensive offline practice.
         </p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <!-- WAT Purchase Card -->
           <div
             class="glass-effect rounded-lg p-6 flex flex-col text-center border-t-4 border-accent"
           >
@@ -270,13 +298,11 @@
               words, for extensive practice.
             </p>
             <a
-              href="https://pages.razorpay.com/Ananta"
-              target="_blank"
+              href="#"
               class="purchase-link mt-auto bg-slate-700 text-white font-bold py-2 px-6 rounded-md hover:bg-accent hover:text-slate-900 transition-all"
               >Purchase Now</a
             >
           </div>
-          <!-- SRT Purchase Card -->
           <div
             class="glass-effect rounded-lg p-6 flex flex-col text-center border-t-4 border-accent"
           >
@@ -288,13 +314,11 @@
               into a single PDF document.
             </p>
             <a
-              href="https://pages.razorpay.com/Ananta"
-              target="_blank"
+              href="#"
               class="purchase-link mt-auto bg-slate-700 text-white font-bold py-2 px-6 rounded-md hover:bg-accent hover:text-slate-900 transition-all"
               >Purchase Now</a
             >
           </div>
-          <!-- GTO Purchase Card -->
           <div
             class="glass-effect rounded-lg p-6 flex flex-col text-center border-t-4 border-accent"
           >
@@ -304,8 +328,7 @@
               covering all outdoor and indoor tasks.
             </p>
             <a
-              href="https://pages.razorpay.com/Ananta"
-              target="_blank"
+              href="#"
               class="purchase-link mt-auto bg-slate-700 text-white font-bold py-2 px-6 rounded-md hover:bg-accent hover:text-slate-900 transition-all"
               >Purchase Now</a
             >
@@ -314,7 +337,6 @@
       </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-slate-900 mt-16 border-t border-slate-700">
       <div class="container mx-auto px-6 py-8">
         <div class="text-center">
@@ -345,31 +367,71 @@
       </div>
     </footer>
 
-    <!-- Confirmation Modal -->
     <div
       id="redirect-modal"
       class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[100] hidden"
     >
-      <div class="glass-effect rounded-lg p-8 max-w-sm mx-auto text-center">
-        <h3 class="text-xl font-bold text-white mb-4">Leaving Ace SSB</h3>
-        <p class="text-gray-300 mb-6">
-          You are being redirected to our secure payment partner's website to
-          complete your purchase. Do you want to continue?
-        </p>
-        <div class="flex justify-center space-x-4">
-          <button
-            id="cancel-redirect-btn"
-            class="bg-gray-600 text-white font-bold py-2 px-6 rounded-md hover:bg-gray-500 transition-all"
+      <div
+        class="glass-effect rounded-lg p-8 max-w-sm w-full mx-auto text-center"
+      >
+        <div
+          id="modal-loading"
+          class="flex flex-col items-center justify-center py-4"
+        >
+          <div class="loader-container">
+            <svg class="circular-loader" viewBox="25 25 50 50">
+              <circle
+                class="loader-path"
+                cx="50"
+                cy="50"
+                r="20"
+                fill="none"
+                stroke-width="4"
+              ></circle>
+            </svg>
+          </div>
+          <p class="text-white font-semibold text-lg">Processing Payment</p>
+          <p class="text-gray-400 text-sm mt-2">
+            Please do not refresh the page...
+          </p>
+        </div>
+
+        <div id="modal-error" class="hidden">
+          <div
+            class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-slate-800 mb-4"
           >
-            Cancel
-          </button>
-          <a
-            id="confirm-redirect-btn"
-            href="#"
-            target="_blank"
-            class="bg-accent text-slate-900 font-bold py-2 px-6 rounded-md hover:bg-opacity-80 transition-all"
-            >Continue</a
-          >
+            <svg
+              class="h-6 w-6 text-accent"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
+
+          <h3 class="text-xl font-bold text-white mb-4">Payment Issue</h3>
+          <p class="text-gray-300 mb-6">
+            Problem while loading the payment , kindly contact at
+            <a
+              href="mailto:acessbprep@gmail.com"
+              class="text-accent hover:underline"
+              >acessbprep@gmail.com</a
+            >
+          </p>
+          <div class="flex justify-center">
+            <button
+              id="close-modal-btn"
+              class="bg-accent text-slate-900 font-bold py-2 px-6 rounded-md hover:bg-opacity-80 transition-all"
+            >
+              Close
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -449,50 +511,53 @@
           });
         }
 
-        // --- Redirect Confirmation Modal Script ---
+        // --- Payment Logic: Loader + 20s Delay + Error ---
         const redirectModal = document.getElementById("redirect-modal");
-        const cancelRedirectBtn = document.getElementById(
-          "cancel-redirect-btn"
-        );
-        const confirmRedirectBtn = document.getElementById(
-          "confirm-redirect-btn"
-        );
+        const modalLoading = document.getElementById("modal-loading");
+        const modalError = document.getElementById("modal-error");
+        const closeModalBtn = document.getElementById("close-modal-btn");
         const purchaseLinks = document.querySelectorAll(".purchase-link");
 
         if (
           redirectModal &&
-          cancelRedirectBtn &&
-          confirmRedirectBtn &&
+          modalLoading &&
+          modalError &&
+          closeModalBtn &&
           purchaseLinks
         ) {
           purchaseLinks.forEach((link) => {
             link.addEventListener("click", function (e) {
               e.preventDefault();
-              const targetUrl = this.href;
-              confirmRedirectBtn.href = targetUrl;
+
+              // 1. Show the modal
               redirectModal.classList.remove("hidden");
+
+              // 2. Ensure Loading state is active and Error state is hidden
+              modalLoading.classList.remove("hidden");
+              modalError.classList.add("hidden");
+
+              // 3. Wait for 20 seconds (20,000 milliseconds)
+              setTimeout(() => {
+                // 4. Toggle states: Hide Loading, Show Error
+                modalLoading.classList.add("hidden");
+                modalError.classList.remove("hidden");
+              }, 20000);
             });
           });
 
-          cancelRedirectBtn.addEventListener("click", () => {
+          // Close button handler (fully hides the modal)
+          closeModalBtn.addEventListener("click", () => {
             redirectModal.classList.add("hidden");
           });
 
+          // Click outside to close
           redirectModal.addEventListener("click", function (event) {
             if (event.target === redirectModal) {
               redirectModal.classList.add("hidden");
             }
-          });
-
-          confirmRedirectBtn.addEventListener("click", () => {
-            setTimeout(() => {
-              redirectModal.classList.add("hidden");
-            }, 100);
           });
         }
       });
     </script>
   </body>
 </html>
-
-
